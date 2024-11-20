@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h2>Login</h2>
+<form action="/login" method="post">
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <input type="submit" value="Send OTP">
+</form>
+<p th:if="${message}" th:text="${message}"></p>
+<p th:if="${error}" th:text="${error}"></p>
+</body>
+</html>
